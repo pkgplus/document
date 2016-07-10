@@ -1,3 +1,12 @@
++++
+date = "2016-07-10T12:50:47+08:00"
+draft = true
+title = "ElasticSearch安全重启"
+tags = ["elasticsearch"]
+categories = ["elasticsearch"]
+
++++
+
 # 安全重启
 
 ## 暂停集群的shard自动均衡
