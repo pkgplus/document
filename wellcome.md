@@ -7,3 +7,4 @@ categories = ["others"]
 +++
 
 欢迎来到[blog.bingbaba.com](http://blog.bingbaba.com)!
+!
