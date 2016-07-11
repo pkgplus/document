@@ -1,25 +1,28 @@
 +++
 date = "2016-07-11T18:30:12+08:00"
-draft = true
-title = "ElasticSearch Sql分页scroll查询"
+title = "ElasticSearch使用scroll分页查询"
 tags = ["elasticsearch","scroll"]
 categories = ["elasticsearch"]
 
 +++
 
-# 原生scroll支持
-[官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html)
+# 首页查询
+## 原生scroll方式
+具体使用说明见[官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/2.3/search-request-scroll.html)
+
 >scroll对应时间为预先查询下一批数据结果的时间，非读取所有数据的时间，建议大于es查询超时时间*shard 或者更大
 
-# ElasticSearch Sql支持
-## 首次查询
+## ElasticSearch Sql方式
+需安装 [elasticsearch-sql插件](https://github.com/NLPchina/elasticsearch-sql)
 
 http请求：
 ```bash
-curl -XPOST http://127.0.0.01:9200/_sql -d 'SELECT /*! USE_SCROLL(1,300000) */ * FROM myindex order by time' 
+curl -XPOST http://127.0.0.01:9200/_sql -d '
+SELECT /*! USE_SCROLL(1,300000) */ * FROM myindex order by time
+' 
 ```
 
-## 非首次查询
+# 非首页查询
 
 * 根据首次查询结果中的_scroll_id查询剩余结果;
 * scroll需要使用带有单位;
