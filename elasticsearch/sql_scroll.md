@@ -17,9 +17,7 @@ categories = ["elasticsearch"]
 
 http请求：
 ```bash
-curl -XPOST http://127.0.0.01:9200/_sql -d '
-SELECT /*! USE_SCROLL(1,300000) */ * FROM myindex order by time
-' 
+curl -XPOST http://127.0.0.1:9200/_sql -d 'SELECT /*! USE_SCROLL(1,300000) */ * FROM myindex order by time'
 ```
 
 # 非首页查询
