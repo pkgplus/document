@@ -50,6 +50,17 @@ curl 'http://www.bjbus.com/home/ajax_search_bus_stop_token.php?act=busTime&selBL
 {"html":"...","w":1964,"seq":"27"}
 ```
 
+
+## 正则
+截取字段分别为：
+- 公交站ID
+- 公交站状态(途中/到站): buss表示`途中`,即`即将到站`;busc表示到站
+- 公交站名
+
+```
+(?:s)<div id="(\d+)">(?:<i class="(\w+)" clstag="[^"]"></i>)?.+?<span title="[^"]+">([^<]+)</span></div>
+```
+
 ###转换具体内容
 ```html
 <div class="inquiry_header">
@@ -592,14 +603,4 @@ curl 'http://www.bjbus.com/home/ajax_search_bus_stop_token.php?act=busTime&selBL
       <span class="busc">到站车辆</span></div>
   </section>
 </div>
-```
-
-## 正则
-截取字段分别为：
-* 公交站ID
-* 公交站状态(途中/到站): buss表示`途中`,即`即将到站`;busc表示到站
-* 公交站名
-
-```
-(?:s)<div id="(\d+)">(?:<i class="(\w+)" clstag="[^"]"></i>)?.+?<span title="[^"]+">([^<]+)</span></div>
 ```
