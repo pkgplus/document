@@ -52,9 +52,9 @@ curl 'http://www.bjbus.com/home/ajax_search_bus_stop_token.php?act=busTime&selBL
 
 
 ## 正则
-截取字段分别为：
+截取字段分别为
 1. 公交站ID
-2. 公交站状态(途中/到站): buss表示`途中`,即`即将到站`;busc表示到站
+2. 公交站状态(途中/到站): busc表示`途中`,即`即将到站`;buss表示`到站`
 3. 公交站名
 
 ```
