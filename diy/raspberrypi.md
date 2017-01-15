@@ -60,8 +60,9 @@ Volume SDXC on disk4s1 unmounted
 
 ### 镜像写入
 使用dd命令将系统镜像写入到SD卡中，此步骤需要好几分钟，不用着急，慢慢等...
+命令: `dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/disk4`
 ```sh
-➜  download sudo dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/disk4
+➜  download sudo dd bs=4m 'if=2017-01-11-raspbian-jessie.img' of=/dev/disk4
 462+1 records in
 462+1 records out
 1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)
