@@ -186,4 +186,4 @@ systemctl enable tightvncserver
 #### VNC Viewer连接
 PC打开VNC Viewer连接树莓派，地址栏输入`树莓派IP地址:1`
 
-*然后就可以跟操作windows一样操作树莓派了!*
+**然后就可以跟操作windows一样操作树莓派了!**
