@@ -60,9 +60,9 @@ Volume SDXC on disk4s1 unmounted
 
 ### 镜像写入
 使用dd命令将系统镜像写入到SD卡中，此步骤需要好几分钟，不用着急，慢慢等...
-命令: `dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/disk4`
+
 ```sh
-➜  download sudo dd bs=4m 'if=2017-01-11-raspbian-jessie.img' of=/dev/disk4
+➜  download sudo dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/disk4
 462+1 records in
 462+1 records out
 1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)
@@ -85,13 +85,15 @@ Unmount of all volumes on disk4 was successful
 2. 给树莓派插上网线；
 3. 给树莓派插上电源(Micro USB线)，等待系统安装完成
 
->等待几分钟后，等树莓派网口的灯亮了说明安装成功
+> 等待几分钟后，等树莓派网口的灯亮了说明安装成功
 
 ## 配置树莓派
 ### ssh登陆
-登陆树莓派所连接路由器，找到树莓派IP地址，另外：建议给树莓派配置固定静态IP
-默认用户名：pi，密码: raspberry
-参考命令：`ssh pi@树莓派ip地址`
+* 登陆树莓派所连接路由器，找到树莓派IP地址
+* 默认用户名：pi，密码: raspberry
+* 参考命令：`ssh pi@树莓派ip地址`
+
+> 建议给树莓派配置固定静态IP
 
 ### apt配置及更新
 #### 备份apt源配置文件
@@ -116,6 +118,7 @@ pi@raspberrypi:~ $ sudo apt-get update
 
 ### 树莓派配置
 在SSH终端输入`sudo raspi-config`, 这里需要打开几个选项:
+
 1. Expand Filesystem – 将根分区扩展到整张SD卡;
 2. Change User Password – 默认的用户名是pi，密码是raspberry;
 3. Internationalisation Options/Change Timezone – 更改时区, 选择Asia – Shanghai;
@@ -125,9 +128,10 @@ pi@raspberrypi:~ $ sudo apt-get update
 
 ### 安装vnc(图形化工具)
 #### 树莓派上安装
-安装命令：`sudo apt-get install tightvncserver`
-修改vnc密码命令: `vncpasswd`
-创建vnc-server配置文件:`sudo vi /etc/init.d/tightvncserver`，文件内容：
+1. 安装命令：`sudo apt-get install tightvncserver`
+2. 修改vnc密码命令: `vncpasswd`
+3. 创建vnc-server配置文件:`sudo vi /etc/init.d/tightvncserver`，文件内容：
+
 ```
 ### BEGIN INIT INFO
 # Provides:          tightvncserver
@@ -179,6 +183,8 @@ systemctl enable tightvncserver
 
 #### PC上安装vnc
 [vnc官网下载](https://www.realvnc.com/download/vnc/)
+
 #### VNC Viewer连接
 PC打开VNC Viewer连接树莓派，地址栏输入`树莓派IP地址:1`
+
 然后就可以跟操作windows一样操作树莓派了!
