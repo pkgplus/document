@@ -110,8 +110,7 @@ pi@raspberrypi:~ $ cp /etc/apt/sources /etc/apt/sources.list_bk
 deb http://mirrors.neusoft.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
 deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main contrib non-free rpi
 ```
-#### 应用更新
-此步骤比较慢，可不做
+#### 应用更新(此步骤比较慢可不做)
 ```
 pi@raspberrypi:~ $ sudo apt-get update
 ```
@@ -187,4 +186,4 @@ systemctl enable tightvncserver
 #### VNC Viewer连接
 PC打开VNC Viewer连接树莓派，地址栏输入`树莓派IP地址:1`
 
-然后就可以跟操作windows一样操作树莓派了!
+*然后就可以跟操作windows一样操作树莓派了!*
