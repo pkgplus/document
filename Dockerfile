@@ -6,15 +6,10 @@ RUN curl -L -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/
 RUN yum -y install git
 RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-# test
-RUN pwd
-RUN ls -lrt
-
 RUN mkdir /app
 WORKDIR /app
-
+CP * /app
 RUN mkdir -p content/post
-RUN cp -r * /app/content/post/
 
 # download hugo
 RUN curl -LO http://download.bingbaba.com/hugo/hugo_0.25.1_Linux-64bit.tar.gz
