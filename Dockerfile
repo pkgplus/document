@@ -8,7 +8,7 @@ RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN mkdir /app
 WORKDIR /app
-CP * /app
+COPY * /app
 RUN mkdir -p content/post
 
 # download hugo
