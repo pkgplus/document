@@ -21,7 +21,7 @@ RUN mkdir site
 run hugo new site ./site
 
 # themes
-RUN WORKDIR /app/site/themes
+WORKDIR /app/site/themes
 RUN git clone https://github.com/digitalcraftsman/hugo-icarus-theme.git
 
 # markdown
