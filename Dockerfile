@@ -1,5 +1,14 @@
 FROM centos
+MAINTAINER Xue Bing <xuebing1110@gmail.com>
+
+RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+RUN curl -L -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 RUN yum -y install git
+RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+# test
+RUN pwd
+RUN ls -lrt
 
 RUN mkdir /app
 WORKDIR /app
