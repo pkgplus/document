@@ -25,4 +25,5 @@ WORKDIR /app/site/themes
 RUN git clone https://github.com/digitalcraftsman/hugo-icarus-theme.git
 
 # markdown
+WORKDIR /app/site
 RUN hugo server --buildDrafts --baseURL $BASE_URL --appendPort=false --bind=0.0.0.0 --theme=hugo-icarus-theme --contentDir=/app/content
