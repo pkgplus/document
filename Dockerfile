@@ -17,10 +17,11 @@ RUN tar xzvf hugo_0.25.1_Linux-64bit.tar.gz
 RUN mv hugo /usr/local/bin/hugo
 
 # new site
-run hugo new site ./
+RUN mkdir site
+run hugo new site ./site
 
 # themes
-RUN WORKDIR /app/themes
+RUN WORKDIR /app/site/themes
 RUN git clone https://github.com/digitalcraftsman/hugo-icarus-theme.git
 
 # markdown
