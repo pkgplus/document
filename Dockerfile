@@ -8,8 +8,8 @@ RUN cp -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 RUN mkdir /app
 WORKDIR /app
-COPY * /app/
 RUN mkdir -p content/post
+COPY * /app/content/post/
 
 # download hugo
 RUN curl -LO http://download.bingbaba.com/hugo/hugo_0.25.1_Linux-64bit.tar.gz
