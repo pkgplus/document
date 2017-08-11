@@ -26,4 +26,4 @@ RUN git clone https://github.com/digitalcraftsman/hugo-icarus-theme.git
 
 # markdown
 WORKDIR /app/site
-CMD ["hugo", "server", "--buildDrafts", "--baseURL", "$BASE_URL", "--appendPort=false", "--bind=0.0.0.0", "--theme=hugo-icarus-theme", "--contentDir=/app/content"]
+CMD ["hugo", "server", "--buildDrafts", "--appendPort=false", "--bind=0.0.0.0", "--theme=hugo-icarus-theme", "--contentDir=/app/content"]
