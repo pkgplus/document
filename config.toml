@@ -22,7 +22,7 @@ verbose = false
     site_description = ""
     copyright  = "Powered by [bingbaba.com](http://github.com/xuebing1110). Create by [Hugo](//gohugo.io)."
     avatar = "http://img-cdn.bingbaba.com/xuebing1110.jpg"
-    logo = "css/images/logo.png"
+    logo = "http://img-cdn.bingbaba.com/hugo-logo.png"
 
     # Format dates with Go's time formatting
     date_format = "2006-01-02 15:04:06"
