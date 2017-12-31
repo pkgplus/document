@@ -16,14 +16,12 @@ RUN curl -LO http://download.bingbaba.com/hugo/hugo_0.25.1_Linux-64bit.tar.gz
 RUN tar xzvf hugo_0.25.1_Linux-64bit.tar.gz
 RUN mv hugo /usr/local/bin/hugo
 
-# new site
-RUN mkdir site
-RUN hugo new site ./site
-
 # themes
 WORKDIR /app/site/themes
 RUN git clone https://github.com/digitalcraftsman/hugo-icarus-theme.git
 
 # markdown
+RUN mkdir site
 WORKDIR /app/site
-CMD ["hugo", "server", "--buildDrafts", "--appendPort=false", "--bind=0.0.0.0", "--theme=hugo-icarus-theme", "--contentDir=/app/content"]
+ADD config.toml config.toml
+ENTRYPOINT ["hugo", "server", "--buildDrafts", "--appendPort=false", "--bind=0.0.0.0", "--theme=hugo-icarus-theme", "--contentDir=/app/content"]

@@ -1,0 +1,94 @@
+baseurl = "http://blog.bingbaba.com/"
+languageCode = "zh-cn"
+title = "Blogger - Bingbaba"
+
+# Define the number of posts per page
+paginate = 10
+footnotereturnlinkcontents = "↩"
+theme = "hugo-icarus-theme"
+
+hasCJKLanguage = true
+verbose = false
+
+#[permalinks]
+#    post = "/:year/:month/:day/:slug"
+
+
+[params]
+    # Tell me who you are
+    author = "xuebing1110@gmail.com"
+    bio = "Blogger - Bingbaba"
+    location = "BeiJing"
+    site_description = ""
+    copyright  = "Powered by [bingbaba.com](http://github.com/xuebing1110). Create by [Hugo](//gohugo.io)."
+    avatar = "http://img-cdn.bingbaba.com/xuebing1110.jpg"
+    logo = "css/images/logo.png"
+
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02 15:04:06"
+
+# Create custom menu entries by defining a label and a link for
+# them. Since you can also link posts, you've the option the
+# place the links before or after them.
+#
+# E.g.: "Home" appears before all linked posts in the menu
+# and "Tags" / "Categories" after them.
+[[params.menu]]
+    before = true
+    label  = "首页"
+    link   = "/"
+
+[[params.menu]]
+    before = false
+    label  = "目录"
+    link   = "/categories"
+
+[[params.menu]]
+    before = false
+    label  = "关于"
+    link   = "post/about/about"
+
+# Enter a link for the follow button on the left
+[params.profile]
+    follow_button = "https://github.com/xuebing1110"
+
+
+[social]
+# Add your social network accounts to the profile section on the left
+# by entering your username. The links to your account will be
+# created automatically.
+    github          = "xuebing1110"
+    gitlab          = ""
+    bitbucket       = ""
+    jsfiddle        = ""
+    codepen         = ""
+    foursquare      = ""
+    dribbble        = ""
+    deviantart      = ""
+    behance         = ""
+    flickr          = ""
+    instagram       = ""
+    youtube         = ""
+    vimeo           = ""
+    vine            = ""
+    medium          = ""
+    wordpress       = ""
+    tumblr          = ""
+    xing            = ""
+    linkedin        = ""
+    slideshare      = ""
+    stackoverflow   = ""
+    reddit          = ""
+    pinterest       = ""
+    googleplus      = ""
+    facebook        = ""
+    facebook_admin  = ""
+    twitter_domain  = ""
+    twitter         = ""
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = true
+    tags = true
+    tag_cloud = false
