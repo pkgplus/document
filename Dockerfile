@@ -18,7 +18,7 @@ RUN mv hugo /usr/local/bin/hugo
 
 # new site
 RUN mkdir site
-run hugo new site ./site
+RUN hugo new site ./site
 
 # themes
 WORKDIR /app/site/themes
